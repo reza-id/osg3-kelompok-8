@@ -1,6 +1,10 @@
 # Tugas OSG #3 - Kelompok 8
 Tujuan utama project ini agar peserta dapat memahami cara berkerja dengan menggunakan github sehingga nantinya peserta dapat berkerja remote dengan baik.
 
+# List API - Kelompok 8
+https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA#daftar-dalam-bahasa-lain
+https://bikewise.org/api/v2/incidents
+
 ## Alur Kerja
 1. Peserta melihat design pada Figma yang akan diberikan oleh pendamping
 2. Peserta boleh menambahkan design pada Figma
