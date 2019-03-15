@@ -5,7 +5,7 @@ import id.eudeka.delapan.model.Locations;
 
 public interface LocationsDataSource {
 
-    void getListLocation(GetLocationCallback callback);
+    void getListLocations(GetLocationCallback callback);
 
     interface GetLocationCallback{
         void onLocationLoaded(Locations data);
