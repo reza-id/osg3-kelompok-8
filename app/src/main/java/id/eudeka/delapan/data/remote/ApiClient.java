@@ -15,4 +15,12 @@ public class ApiClient {
                 .build();
         return retrofit;
     }
+
+    public static Retrofit getLocations(){
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL+"locations/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit;
+    }
 }
