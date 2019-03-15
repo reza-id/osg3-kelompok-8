@@ -32,7 +32,7 @@ public class ListViewModel {
 
             @Override
             public void onDataNotAvailabel(String errorMessage) {
-
+                System.out.println("okh "+errorMessage);
             }
         });
     }

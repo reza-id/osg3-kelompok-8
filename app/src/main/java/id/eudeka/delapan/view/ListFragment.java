@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,9 @@ public class ListFragment extends Fragment implements IncidentNavigator {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_incident, container, false);
-        recIncident = (RecyclerView)view.findViewById(R.id.list);
+        recIncident = (RecyclerView) view.findViewById(R.id.list);
         progressbar = (ProgressBar) view.findViewById(R.id.progressbar);
+
         progressbar.setVisibility(View.VISIBLE);
         listViewModel = new ListViewModel(IncidentInjection.provideIncidentRepository(),this);
         dataListIncident = new ArrayList<>();
@@ -49,7 +51,6 @@ public class ListFragment extends Fragment implements IncidentNavigator {
 
     @Override
     public void loadListIncident(List<Incident> listIncident) {
-        dataListIncident.clear();
         dataListIncident.addAll(listIncident);
         adapter.notifyDataSetChanged();
         progressbar.setVisibility(View.GONE);
@@ -62,8 +63,8 @@ public class ListFragment extends Fragment implements IncidentNavigator {
 
     private void initAdapter() {
         adapter = new IncidentAdapter(dataListIncident);
-        recIncident.setAdapter(adapter);
         recIncident.setLayoutManager(new LinearLayoutManager(getContext()));
         recIncident.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recIncident.setAdapter(adapter);
     }
 }

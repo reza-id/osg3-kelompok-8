@@ -22,10 +22,6 @@ public class Incident {
     @Expose
     private String address;
 
-    @SerializedName("occurred_at")
-    @Expose
-    private String occurred_at;
-
     @SerializedName("updated_at")
     @Expose
     private String updated_at;
@@ -37,22 +33,6 @@ public class Incident {
     @SerializedName("media")
     @Expose
     private Media media;
-
-    @SerializedName("location_type")
-    @Expose
-    private String location_type;
-
-    @SerializedName("location_description")
-    @Expose
-    private String location_description;
-
-    @SerializedName("type")
-    @Expose
-    private String type;
-
-    @SerializedName("type_properties")
-    @Expose
-    private String type_properties;
 
     public String getId() {
         return id;
@@ -90,15 +70,6 @@ public class Incident {
         return this;
     }
 
-    public String getOccurred_at() {
-        return occurred_at;
-    }
-
-    public Incident setOccurred_at(String occurred_at) {
-        this.occurred_at = occurred_at;
-        return this;
-    }
-
     public String getUpdated_at() {
         return updated_at;
     }
@@ -123,42 +94,6 @@ public class Incident {
 
     public Incident setMedia(Media media) {
         this.media = media;
-        return this;
-    }
-
-    public String getLocation_type() {
-        return location_type;
-    }
-
-    public Incident setLocation_type(String location_type) {
-        this.location_type = location_type;
-        return this;
-    }
-
-    public String getLocation_description() {
-        return location_description;
-    }
-
-    public Incident setLocation_description(String location_description) {
-        this.location_description = location_description;
-        return this;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public Incident setType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public String getType_properties() {
-        return type_properties;
-    }
-
-    public Incident setType_properties(String type_properties) {
-        this.type_properties = type_properties;
         return this;
     }
 
