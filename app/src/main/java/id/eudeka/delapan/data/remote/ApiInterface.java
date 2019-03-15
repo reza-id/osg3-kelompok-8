@@ -1,5 +1,7 @@
 package id.eudeka.delapan.data.remote;
 
+import java.util.List;
+
 import id.eudeka.delapan.model.Incident;
 import id.eudeka.delapan.model.Locations;
 import retrofit2.Call;
@@ -8,8 +10,8 @@ import retrofit2.http.Path;
 
 public interface ApiInterface {
 
-    @GET("incident/{id}")
-    Call<Incident> getAllIncident(@Path("id") String id);
+    @GET("incidents/{id}")
+    Call<List<Incident>> getAllIncident(@Path("id") String id);
 
     @GET("locations/")
     Call<Locations> getAllLocation();
