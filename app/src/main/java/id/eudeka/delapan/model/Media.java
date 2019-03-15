@@ -8,6 +8,14 @@ import java.util.List;
 
 public class Media {
 
+    @SerializedName("image_url")
+    @Expose
+    private String image_url;
+
+    @SerializedName("image_url_thumb")
+    @Expose
+    private String image_url_thumb;
+
     public String getImage_url() {
         return image_url;
     }
@@ -25,16 +33,5 @@ public class Media {
         this.image_url_thumb = image_url_thumb;
         return this;
     }
-
-    @SerializedName("image_url")
-    @Expose
-    private String image_url;
-
-    @SerializedName("image_url_thumb")
-    @Expose
-    private String image_url_thumb;
-    
-    
-
 
 }

@@ -50,6 +50,10 @@ public class Incident {
     @Expose
     private String type;
 
+    @SerializedName("type_properties")
+    @Expose
+    private String type_properties;
+
     public String getId() {
         return id;
     }
@@ -157,10 +161,5 @@ public class Incident {
         this.type_properties = type_properties;
         return this;
     }
-
-    @SerializedName("type_properties")
-    @Expose
-    private String type_properties;
-
 
 }
