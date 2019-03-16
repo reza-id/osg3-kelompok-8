@@ -9,8 +9,8 @@ import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import id.eudeka.delapan.model.Media;
-import id.eudeka.delapan.model.Source;
+import id.eudeka.delapan.model.incident.Media;
+import id.eudeka.delapan.model.incident.Source;
 
 /**
  * Created by Fajar Septian on 16/03/2019.
