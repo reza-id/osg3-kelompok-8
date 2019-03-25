@@ -1,10 +1,13 @@
 package id.eudeka.delapan.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Incident {
+public class Incident implements Parcelable {
 
     @SerializedName("id")
     @Expose
@@ -97,4 +100,57 @@ public class Incident {
         return this;
     }
 
+    public static final Parcelable.Creator<Incident> CREATOR = new Parcelable.Creator<Incident>() {
+        @Override
+        public Incident createFromParcel(Parcel source) {
+            return new Incident(source);
+        }
+
+        @Override
+        public Incident[] newArray(int size) {
+            return new Incident[size];
+        }
+    };
+
+    public Incident() {
+    }
+
+    protected Incident(Parcel in) {
+        this.id = in.readString();
+        this.title = in.readString();
+        this.description = in.readString();
+        this.address = in.readString();
+        this.updated_at = in.readString();
+        this.url = in.readString();
+        this.media = in.readParcelable(Media.class.getClassLoader());
+    }
+
+    @Override
+    public String toString() {
+        return "Incident{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", address='" + address + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", url='" + url + '\'' +
+                ", media=" + media +
+                '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.description);
+        dest.writeString(this.address);
+        dest.writeString(this.updated_at);
+        dest.writeString(this.url);
+        dest.writeParcelable(this.media, flags);
+    }
 }

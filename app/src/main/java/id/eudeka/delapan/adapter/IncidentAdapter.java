@@ -41,6 +41,10 @@ public class IncidentAdapter extends RecyclerView.Adapter<IncidentAdapter.Incide
         Picasso.get().load(data.getMedia().getImage_url_thumb()).into(incidentHolder.image_url_thumb);
     }
 
+    public Incident getDataIncident(int position) {
+        return listIncident.get(position);
+    }
+
     @Override
     public int getItemCount() {
         return listIncident.size();

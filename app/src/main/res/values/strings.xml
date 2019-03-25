@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Kelompok Delapan</string>
+    <string name="text_details">details</string>
+    <string name="text_description">description</string>
+    <string name="text_address">Address</string>
+    <string name="text_updated_at">Updated at</string>
 </resources>
