@@ -1,5 +1,6 @@
 package id.eudeka.delapan.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +20,12 @@ import java.util.List;
 import id.eudeka.delapan.IncidentInjection;
 import id.eudeka.delapan.R;
 import id.eudeka.delapan.adapter.IncidentAdapter;
+import id.eudeka.delapan.listener.ItemClickRecyclerView;
 import id.eudeka.delapan.model.Incident;
 import id.eudeka.delapan.navigator.IncidentNavigator;
 import id.eudeka.delapan.viewmodel.ListViewModel;
+
+import static id.eudeka.delapan.view.DetailActivity.EXTRA_DETAIL_INCIDENT;
 
 public class ListFragment extends Fragment implements IncidentNavigator {
 
@@ -46,6 +49,16 @@ public class ListFragment extends Fragment implements IncidentNavigator {
         listViewModel.setNavigator(this);
         listViewModel.getListIncident();
         initAdapter();
+
+        ItemClickRecyclerView.addTo(recIncident).setOnItemClickListener(new ItemClickRecyclerView.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                intent.putExtra(EXTRA_DETAIL_INCIDENT, adapter.getDataIncident(position));
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 

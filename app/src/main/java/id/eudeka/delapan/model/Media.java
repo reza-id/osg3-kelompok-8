@@ -1,12 +1,13 @@
 package id.eudeka.delapan.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
-
-public class Media {
+public class Media implements Parcelable {
 
     @SerializedName("image_url")
     @Expose
@@ -34,4 +35,34 @@ public class Media {
         return this;
     }
 
+    public static final Parcelable.Creator<Media> CREATOR = new Parcelable.Creator<Media>() {
+        @Override
+        public Media createFromParcel(Parcel source) {
+            return new Media(source);
+        }
+
+        @Override
+        public Media[] newArray(int size) {
+            return new Media[size];
+        }
+    };
+
+    public Media() {
+    }
+
+    protected Media(Parcel in) {
+        this.image_url = in.readString();
+        this.image_url_thumb = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.image_url);
+        dest.writeString(this.image_url_thumb);
+    }
 }
