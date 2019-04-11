@@ -1,38 +1,52 @@
 package id.eudeka.delapan.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
+@Entity(tableName = "incident")
 public class Incident implements Parcelable {
-
+    @NonNull
+    @ColumnInfo(name = "id")
+    @PrimaryKey()
     @SerializedName("id")
     @Expose
-    private String id;
+    private String id ="0";
 
+    @ColumnInfo(name = "title")
     @SerializedName("title")
     @Expose
     private String title;
 
+    @ColumnInfo(name = "description")
     @SerializedName("description")
     @Expose
     private String description;
 
+    @ColumnInfo(name = "address")
     @SerializedName("address")
     @Expose
     private String address;
 
+    @ColumnInfo(name = "updated_at")
     @SerializedName("updated_at")
     @Expose
     private String updated_at;
 
+    @ColumnInfo(name = "url")
     @SerializedName("url")
     @Expose
     private String url;
 
+    @Embedded
     @SerializedName("media")
     @Expose
     private Media media;
@@ -41,63 +55,56 @@ public class Incident implements Parcelable {
         return id;
     }
 
-    public Incident setId(String id) {
+    public void setId(String id) {
         this.id = id;
-        return this;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public Incident setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
-        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public Incident setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
-        return this;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public Incident setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
-        return this;
     }
 
     public String getUpdated_at() {
         return updated_at;
     }
 
-    public Incident setUpdated_at(String updated_at) {
+    public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
-        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Incident setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 
     public Media getMedia() {
         return media;
     }
 
-    public Incident setMedia(Media media) {
+    public void setMedia(Media media) {
         this.media = media;
-        return this;
     }
 
     public static final Parcelable.Creator<Incident> CREATOR = new Parcelable.Creator<Incident>() {

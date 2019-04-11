@@ -1,5 +1,6 @@
 package id.eudeka.delapan.model;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -8,11 +9,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Media implements Parcelable {
-
+    @ColumnInfo(name = "image_url")
     @SerializedName("image_url")
     @Expose
     private String image_url;
 
+    @ColumnInfo(name = "image_url_thumb")
     @SerializedName("image_url_thumb")
     @Expose
     private String image_url_thumb;
@@ -21,18 +23,16 @@ public class Media implements Parcelable {
         return image_url;
     }
 
-    public Media setImage_url(String image_url) {
+    public void setImage_url(String image_url) {
         this.image_url = image_url;
-        return this;
+    }
+
+    public void setImage_url_thumb(String image_url_thumb) {
+        this.image_url_thumb = image_url_thumb;
     }
 
     public String getImage_url_thumb() {
         return image_url_thumb;
-    }
-
-    public Media setImage_url_thumb(String image_url_thumb) {
-        this.image_url_thumb = image_url_thumb;
-        return this;
     }
 
     public static final Parcelable.Creator<Media> CREATOR = new Parcelable.Creator<Media>() {

@@ -1,12 +1,8 @@
 package id.eudeka.delapan.viewmodel;
 
-import android.content.Context;
-
-import java.util.List;
-
 import id.eudeka.delapan.data.IncidentDataSource;
 import id.eudeka.delapan.data.IncidentRepository;
-import id.eudeka.delapan.model.Incident;
+import id.eudeka.delapan.model.Incidents;
 import id.eudeka.delapan.navigator.IncidentNavigator;
 import id.eudeka.delapan.view.ListFragment;
 
@@ -26,8 +22,8 @@ public class ListViewModel {
     public void getListIncident(){
         incidentRepository.getListIncident(new IncidentDataSource.GetIncidentCallback() {
             @Override
-            public void onIncidentLoaded(List<Incident> data) {
-                mNavigator.loadListIncident(data);
+            public void onIncidentLoaded(Incidents data) {
+                mNavigator.loadListIncident(data.getIncidents());
             }
 
             @Override

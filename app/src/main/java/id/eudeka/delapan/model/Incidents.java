@@ -12,12 +12,15 @@ public class Incidents {
         return incidents;
     }
 
-    public Incidents setIncidents(List<Incident> incidents) {
+    public void setIncidents(List<Incident> incidents) {
         this.incidents = incidents;
-        return this;
     }
 
     @SerializedName("incidents")
     @Expose
     private List<Incident> incidents;
+
+    public Incidents(List<Incident> incidents) {
+        this.incidents = incidents;
+    }
 }

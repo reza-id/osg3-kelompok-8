@@ -1,8 +1,6 @@
 package id.eudeka.delapan.data;
 
-import id.eudeka.delapan.data.remote.IncidentRemoteDataSource;
 import id.eudeka.delapan.data.remote.LocationsRemoteDataSource;
-import id.eudeka.delapan.model.Incident;
 import id.eudeka.delapan.model.Locations;
 
 public class LocationsRepository implements LocationsDataSource {

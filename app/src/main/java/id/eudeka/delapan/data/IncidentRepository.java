@@ -1,9 +1,7 @@
 package id.eudeka.delapan.data;
 
-import java.util.List;
-
 import id.eudeka.delapan.data.remote.IncidentRemoteDataSource;
-import id.eudeka.delapan.model.Incident;
+import id.eudeka.delapan.model.Incidents;
 
 public class IncidentRepository implements IncidentDataSource {
 
@@ -17,7 +15,7 @@ public class IncidentRepository implements IncidentDataSource {
     public void getListIncident(final GetIncidentCallback callback) {
         incidentRemoteDataSource.getListIncident(new GetIncidentCallback() {
             @Override
-            public void onIncidentLoaded(List<Incident> data) {
+            public void onIncidentLoaded(Incidents data) {
                 callback.onIncidentLoaded(data);
             }
 

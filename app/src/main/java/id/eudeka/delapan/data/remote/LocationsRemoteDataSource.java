@@ -1,7 +1,6 @@
 package id.eudeka.delapan.data.remote;
 
 import id.eudeka.delapan.data.LocationsDataSource;
-import id.eudeka.delapan.model.Incident;
 import id.eudeka.delapan.model.Locations;
 import retrofit2.Call;
 import retrofit2.Callback;
